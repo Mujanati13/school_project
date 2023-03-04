@@ -41,7 +41,7 @@ export default function () {
   console.log(((end - start) / 1000) / 60 / 60);
 
   useEffect(() => {
-    fetch('http://65.20.97.122/api/session?userId='+getCookie('id'))
+    fetch('https://65.20.97.122/api/session?userId='+getCookie('id'))
       .then(response => response.json())
       .then(data => {
         data.map(e => {

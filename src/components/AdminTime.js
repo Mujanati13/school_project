@@ -44,7 +44,7 @@ export default function () {
 
   useEffect(() => {
     var settingTime = 24 * 60 * 60 * 10000;
-    fetch("http://65.20.97.122/api/sessionAdmin?userId="+getCookie('id'))
+    fetch("https://65.20.97.122/api/sessionAdmin?userId="+getCookie('id'))
       .then((response) => response.json())
       .then((data) => {
         data.map((e) => {
