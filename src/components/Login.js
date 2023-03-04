@@ -54,6 +54,7 @@ export default function Login() {
           })
           .catch((e) => {
             console.log(e);
+            setIsLoading(false);
           });
       } else if (type == "teacher") {
         signInWithEmailAndPassword(auth, getemail, getpassword)
@@ -74,6 +75,7 @@ export default function Login() {
           })
           .catch((e) => {
             console.log(e);
+            setIsLoading(false)
           });
       }
     }
