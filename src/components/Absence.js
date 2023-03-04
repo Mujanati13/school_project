@@ -26,7 +26,7 @@ export default function () {
 
   useEffect(() => {
     const compenents = []
-    fetch("http://localhost:3001/api/presence?userId="+getCookie('id'))
+    fetch("http://65.20.97.122/api/presence?userId="+getCookie('id'))
       .then((response) => response.json())
       .then((data) => {
         data.map(e=>{
@@ -41,7 +41,7 @@ export default function () {
 
   useEffect(() => {
     const compenents = []
-    fetch("http://localhost:3001/api/absence?userId="+getCookie('id'))
+    fetch("http://65.20.97.122/api/absence?userId="+getCookie('id'))
       .then((response) => response.json())
       .then((data) => {
         data.map(e=>{

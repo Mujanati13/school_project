@@ -44,7 +44,7 @@ export default function () {
 
   useEffect(() => {
     var settingTime = 24 * 60 * 60 * 10000;
-    fetch("http://localhost:3001/api/session")
+    fetch("http://65.20.97.122/api/session")
       .then((response) => response.json())
       .then((data) => {
         data.map((e) => {
@@ -55,6 +55,8 @@ export default function () {
             givenDate.getMonth() === currentDateTime.getMonth() &&
             givenDate.getDay() === currentDateTime.getDay()
           ) {
+            console.log(givenDate + " " + currentDateTime);
+            console.log(givenDate - currentDateTime);
             if (givenDate - currentDateTime > 0) {
               settingTime = Math.min(settingTime, givenDate - currentDateTime);
               //startCalcul(settingTime);
