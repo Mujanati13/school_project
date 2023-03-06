@@ -41,7 +41,7 @@ export default function () {
   var start = new Date("2,24,2023,7:00");
 
   useEffect(() => {
-    fetch("https://localhost:3001/api/sessionAdmin?userId=" + getCookie("id"))
+    fetch("https://65.20.97.122/api/sessionAdmin?userId=" + getCookie("id"))
       .then((response) => response.json())
       .then((data) => {
         data.map((e) => {

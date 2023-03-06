@@ -8,6 +8,7 @@ import { Route , Routes , BrowserRouter } from 'react-router-dom';
 import Presence from './components/Presence';
 import Adminpresence from './components/Adminpresence';
 import ScheduleAdmin from './components/ScheduleAdmin';
+import UploadFile from './components/UploadFile';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -20,6 +21,7 @@ const App = ()=>{
         <Route path='/schedule' element={<Shedules />}></Route>
         <Route path='/presence' element={<Presence />}></Route>
         <Route path='/admin' element={<Adminpresence />}></Route>
+        <Route path='/upload' element={<UploadFile />}></Route>
         <Route path='/Scheduleadmin' element={<ScheduleAdmin />}></Route>
       </Routes>
     </BrowserRouter>

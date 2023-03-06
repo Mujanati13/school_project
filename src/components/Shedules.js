@@ -16,6 +16,8 @@ import config from "../firebase/config";
 import { LogoutAuth } from "../firebase/firebaseFuntions";
 import Time from "./Time";
 import { RRule } from 'rrule';
+import { ReactComponent as Upload } from "../image/upload.svg";
+
 
 export default function () {
   const locales = {
@@ -126,7 +128,7 @@ export default function () {
               <p className="h-8 cursor-pointer hover:bg-gray-700 shadow-lg bg-gray-500 border-white w-full">
                 <Link to="/schedule">
                   <p className="pl-5 flex items-center font-normal space-x-3 justify-start text-gray-300 text-md h-8 text-center">
-                    <She className="w-5 fill-white" />
+                    <She className="w-6 fill-white" />
                     <span className="font-bold">Schedule</span>
                   </p>
                 </Link>
@@ -137,6 +139,14 @@ export default function () {
                     <Absence className="w-6 fill-white" />
                     <span className="font-bold">Absence</span>
                     <div className="w-2 h-2 bg-red-500 rounded-full"></div>
+                  </p>
+                </Link>
+              </p>
+              <p className="h-8 mt-0.5 cursor-pointer hover:bg-gray-700 shadow-lg bg-gray-500 border-white w-full">
+                <Link to="/upload">
+                  <p className="pl-5 flex items-center font-normal space-x-3 justify-start text-gray-300 text-md h-8 text-center">
+                    <Upload className="w-6 fill-white" />
+                    <span className="font-bold">Upload File</span>
                   </p>
                 </Link>
               </p>

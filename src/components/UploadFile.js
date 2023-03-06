@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
 import she, { ReactComponent as She } from "../image/she.svg";
 import { ReactComponent as Absence } from "../image/absence.svg";
+import { ReactComponent as Upload } from "../image/upload.svg";
 import { ReactComponent as More } from "../image/more.svg";
-import { ReactComponent as Done } from "../image/done.svg";
 import { Link, Navigate } from "react-router-dom";
 import AbsenceCard from "./AbsenceCard";
 import {
-  checkAth,
   getCookie,
   removeCookie,
 } from "../firebase/firebaseFuntions";
@@ -14,47 +13,15 @@ import { getAuth } from "firebase/auth";
 import config from "../firebase/config";
 import { LogoutAuth } from "../firebase/firebaseFuntions";
 import PresenceCard from "./PresenceCard";
-import { ReactComponent as Upload } from "../image/upload.svg";
+import DropfileCard from "./DropfileCard";
 
 
 export default function () {
   const [getlogin, setlogin] = useState(false);
-  const [newComponent, SetnewComponent] = useState();
-  const [newComponentb, SetnewComponentb] = useState();
 
   const handleLogin = () => {
     setlogin(getlogin == false ? true : false);
   };
-
-  useEffect(() => {
-    const compenents = []
-    fetch("https://65.20.97.122/api/presence?userId="+getCookie('id'))
-      .then((response) => response.json())
-      .then((data) => {
-        data.map(e=>{
-          compenents.push(<PresenceCard title={e.title} date={e.Pdate} />)
-        })
-        SetnewComponent(compenents)
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
-
-  useEffect(() => {
-    const compenents = []
-    fetch("https://65.20.97.122/api/absence?userId="+getCookie('id'))
-      .then((response) => response.json())
-      .then((data) => {
-        data.map(e=>{
-          compenents.push(<AbsenceCard title={e.title} date={e.Adate} />)
-        })
-        SetnewComponentb(compenents)
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
 
   function logout() {
     var a = LogoutAuth();
@@ -132,11 +99,10 @@ export default function () {
               </p>
           </div>
           <div
-            style={{ width: "80%", height: "75vh", overflow: "auto" }}
-            className="mt-10 bg-gray-100 "
+            style={{ width: "80%", height: "75vh", overflow: "auto" , display:"flex" , justifyContent:"center" }}
+            className=" bg-gray-100 mt-10"
           >
-            {newComponent}
-            {newComponentb}
+            <DropfileCard />
           </div>
         </div>
       </div>
